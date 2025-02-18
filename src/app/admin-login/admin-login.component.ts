@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './admin-login.component.html',
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
+  router = inject(Router)
+
+
+  gotoRegister() {
+    this.router.navigateByUrl("register")
+  }
 
 }
