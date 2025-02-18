@@ -5,7 +5,7 @@
       <div class="navbar-brand" routerLink="adminLogin" aria-current="page" href="#" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="bi bi-gear"></i></div>
         <!-- view score -->
-            <a class="nav-link active " aria-current="page" routerLink="">View Score</a>
+            <a  *ngIf="url!='/' && url!='/matchDash'" class="nav-link active " aria-current="page" routerLink="">View Score</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
             <!-- <a class="nav-link active" aria-current="page" routerLink="">View Score</a> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a *ngIf="url=='/controlPanel'" class="nav-link" href="#" (click)="adminLogout()"> <i class="bi bi-box-arrow-left"></i> Logout</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
