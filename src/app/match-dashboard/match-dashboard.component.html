@@ -1,53 +1,55 @@
-<div class="container-fluid">
+<div class="container   flex-column align-items-center">
     <!-- School Name Section -->
-    <div class="scName col-12 d-flex align-items-center justify-content-start fs-3 mb-4">
+    <div class="scName text-center mb-4 w-100">
         <h3>School Name</h3>
     </div>
 
     <!-- Date Section -->
-    <div class="row date mb-3">
-        <div class="col-4 dates d-flex align-items-center justify-content-center border border-3 rounded-2 fs-4">
-            Date 1
-        </div>
-        <div class="col-4 dates d-flex align-items-center justify-content-center border border-3 rounded-2 fs-4">
-            Date 2
-        </div>
-        <div class="col-4 dates d-flex align-items-center justify-content-center border border-3 rounded-2 fs-4">
-            Date 3
-        </div>
-    </div>
+    <!-- <div class="row date mb-3 text-center w-100">
+        <div class="col-md-4 dates py-2 rounded-2">Date 1</div>
+        <div class="col-md-4 dates py-2 rounded-2">Date 2</div>
+        <div class="col-md-4 dates py-2 rounded-2">Date 3</div>
+    </div> -->
 
     <!-- Score Section -->
-    <div class="score row mt-3 p-3 border border-dark border-3 rounded-2">
+    <div class="score row py-2 px-3 my-3 rounded-2 " *ngFor="let match of matches">
         <!-- Team 1 -->
-        <div class="col-5">
-            <div class="team1">
-                <div class="card d-flex align-items-center">
-                    <img src="assets/Football_Live_Blog_4_1705587974795_1705587983103.jpg" class="card mt-4" alt="Team 1" width="80px" height="80px">
-                    <div class="card-body">
-                        <h5 class="card-title">Team 1</h5>
-                    </div>
+        <div class=" col ">
+            <div class="card ">
+                <img src="assets/Football_Live_Blog_4_1705587974795_1705587983103.jpg" class="rounded-circle"
+                    alt="Team 1">
+                <div class="card-body">
+                    <h5 class="card-title">{{match.TeamName1}}</h5>
                 </div>
             </div>
         </div>
 
         <!-- Score -->
-        <div class="col-2 d-flex align-items-center justify-content-center">
-            <h5 class="pt-4">3-4</h5>
+        <div class=" col ">
+            <div class="row">
+                <h5 class="col">{{match.score1}}</h5>
+                <h5 class="mx-2 col">-</h5>
+                <h5 class="col">{{match.score2}}</h5>
+            </div>
 
-
+            <div class="match-details mt-2">
+                <div>{{match.date}}</div>
+                <div>{{match.matchTime}}</div>
+            </div>
         </div>
 
         <!-- Team 2 -->
-        <div class="col-5">
-            <div class="team2">
-                <div class="card d-flex align-items-center">
-                    <img src="assets/Football_Live_Blog_4_1705587974795_1705587983103.jpg" class="card mt-4" alt="Team 2" width="80px" height="80px">
-                    <div class="card-body">
-                        <h5 class="card-title">Team 2</h5>
-                    </div>
+        <div class=" col ">
+            <div class="card ">
+                <img src="assets/Football_Live_Blog_4_1705587974795_1705587983103.jpg" class="rounded-circle"
+                    alt="Team 2">
+                <div class="card-body">
+                    <h5 class="card-title">{{match.TeamName2}}</h5>
                 </div>
             </div>
         </div>
+
+        <!-- Match Details -->
+
     </div>
 </div>
